@@ -83,6 +83,8 @@ module Asana
           self.new(parse(client.post("/tasks", body: with_params, options: options)).first, client: client)
         end
 
+        alias_method :create_task, :create
+
         # Creating a new task is as easy as POSTing to the `/tasks` endpoint
         # with a data block containing the fields you'd like to set on the task.
         # Any unspecified fields will take on default values.
